@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:id="@+id/refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srlDragRate="0.7"
+            app:srlEnableHeaderTranslationContent="false"
+            app:srlEnablePreviewInEditMode="false"
+            app:srlHeaderInsetStart="@dimen/toolbar_height">
+
+
+            <include
+                android:id="@+id/include"
+                layout="@layout/include_refresh_header"/>
+
+            <android.support.design.widget.CoordinatorLayout
+                android:id="@+id/mCoordinatorLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/windowBackground"
+                android:clipToPadding="false"
+                android:paddingTop="@dimen/toolbar_height">
+
+                <android.support.design.widget.AppBarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/windowBackground"
+                    android:orientation="vertical"
+                    app:elevation="1dp">
+
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:layout_marginStart="@dimen/margin_num2"
+                        android:layout_marginTop="@dimen/margin_num3"
+                        android:layout_marginEnd="@dimen/margin_num2"
+                        app:cardCornerRadius="@dimen/radius_num"
+                        app:cardElevation="0dp"
+                        app:layout_scrollFlags="scroll">
+
+                        <com.youth.banner.Banner
+                            android:id="@+id/banner"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:delay_time="8000"
+                            app:indicator_drawable_selected="@drawable/banner_point_selected"
+                            app:indicator_drawable_unselected="@drawable/banner_point_unselected"
+                            app:indicator_height="5dp"
+                            app:indicator_margin="2dp"
+                            app:indicator_width="5dp"
+                            app:is_auto_play="true"/>
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="@dimen/margin_num2"
+                        android:layout_marginTop="@dimen/margin_num3"
+                        android:layout_marginEnd="@dimen/margin_num2"
+                        android:layout_marginBottom="@dimen/margin_num2"
+                        app:cardCornerRadius="@dimen/radius_num"
+                        app:cardElevation="0dp">
+
+                        <android.support.design.widget.TabLayout
+                            android:id="@+id/tab_layout"
+                            style="@style/tab_gray_dark_default"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+
+                    </android.support.v7.widget.CardView>
+
+
+                </android.support.design.widget.AppBarLayout>
+
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/mViewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+
+            </android.support.design.widget.CoordinatorLayout>
+
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+        <com.github.mmin18.widget.RealtimeBlurView
+            android:id="@+id/blurView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/toolbar_height"/>
+
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tool_bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/toolbar_height"
+            android:background="@android:color/transparent"
+            app:contentInsetStart="0dp"
+            app:contentInsetStartWithNavigation="0dp"
+            app:layout_scrollFlags="enterAlways|scroll"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+
+            <com.leahy.utils.radius.RadiusTextView
+                android:id="@+id/search"
+                style="@style/edit_text_default"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_num2"
+                android:layout_marginTop="@dimen/margin_num3"
+                android:layout_marginEnd="@dimen/margin_num2"
+                android:layout_marginBottom="@dimen/margin_num3"
+                android:drawableStart="@drawable/ic_search"
+                android:drawablePadding="5dp"
+                android:hint="@string/str_search_hint"
+                android:singleLine="true"
+                app:rv_radius="@dimen/radius_num"
+                app:rv_rippleEnable="true"
+                app:rv_strokeColor="@color/text_color_gray"
+                app:rv_strokeWidth="0.1dp"/>
+
+        </android.support.v7.widget.Toolbar>
+
+
+    </FrameLayout>
+</layout>

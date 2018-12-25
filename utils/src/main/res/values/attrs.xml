@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--圆头像-->
+    <declare-styleable name="CircleImageView">
+        <attr name="border_width" format="dimension"/>
+        <attr name="border_color" format="color"/>
+    </declare-styleable>
+
+
+
+    <declare-styleable name="SwitchButton">
+        <attr name="sb_shadow_radius" format="reference|dimension"/> <!--  阴影半径-->
+        <attr name="sb_shadow_offset" format="reference|dimension"/><!-- 阴影偏移-->
+        <attr name="sb_shadow_color" format="reference|color"/><!--阴影颜色-->
+        <attr name="sb_uncheck_color" format="reference|color"/><!--关闭颜色-->
+        <attr name="sb_checked_color" format="reference|color"/><!--开启颜色-->
+
+        <attr name="sb_border_width" format="reference|dimension"/><!--边框宽度-->
+        <attr name="sb_checkline_color" format="reference|color"/><!--开启指示器颜色-->
+        <attr name="sb_checkline_width" format="reference|dimension"/><!-- 开启指示器线宽-->
+        <attr name="sb_uncheckcircle_color" format="reference|color"/><!--关闭指示器颜色-->
+        <attr name="sb_uncheckcircle_width" format="reference|dimension"/><!--关闭指示器线宽-->
+        <attr name="sb_uncheckcircle_radius" format="reference|dimension"/><!--关闭指示器半径-->
+
+        <attr name="sb_checked" format="reference|boolean"/><!--是否选中-->
+        <attr name="sb_shadow_effect" format="reference|boolean"/><!--是否启用阴影-->
+        <attr name="sb_effect_duration" format="reference|integer"/><!--动画时间，默认300ms-->
+        <attr name="sb_button_color" format="reference|color"/><!--按钮颜色-->
+        <attr name="sb_show_indicator" format="reference|boolean"/><!--是否显示指示器，默认true：显示-->
+        <attr name="sb_background" format="reference|color"/><!-- 背景色，默认白色-->
+        <attr name="sb_enable_effect" format="reference|boolean"/><!--是否启用特效，默认true-->
+    </declare-styleable>
+
+
+    <!--可以这只内边距的TabLayout-->
+
+    <declare-styleable name="XTabItem">
+        <attr name="android:text"/>
+        <attr name="android:icon"/>
+        <attr name="android:layout"/>
+    </declare-styleable>
+
+
+    <declare-styleable name="XTabLayout">
+        <attr name="x_tabIndicatorColor" format="color"/>
+        <attr name="x_tabIndicatorHeight" format="dimension"/>
+        <attr name="x_tabIndicatorWidth" format="dimension"/>
+        <attr name="x_tabContentStart" format="dimension"/>
+        <attr name="x_tabBackground" format="reference"/>
+        <attr name="x_tabMode">
+            <enum name="scrollable" value="0"/>
+            <enum name="fixed" value="1"/>
+        </attr>
+        <attr name="x_tabGravity">
+            <enum name="fill" value="0"/>
+            <enum name="center" value="1"/>
+        </attr>
+        <attr name="x_tabMinWidth" format="dimension"/>
+        <attr name="x_tabMaxWidth" format="dimension"/>
+        <attr name="x_tabTextAppearance" format="reference"/>
+        <attr name="x_tabTextColor" format="color"/>
+        <attr name="x_tabSelectedTextColor" format="color"/>
+        <attr name="x_tabPaddingStart" format="dimension"/>
+        <attr name="x_tabPaddingTop" format="dimension"/>
+        <attr name="x_tabPaddingEnd" format="dimension"/>
+        <attr name="x_tabPaddingBottom" format="dimension"/>
+        <attr name="x_tabPadding" format="dimension"/>
+    </declare-styleable>
+
+
+
+    <!--气泡-->
+    <declare-styleable name="BubbleLayout">
+        <attr name="bubbleType"><!--箭头的位置-->
+            <flag name="left" value="0x0000"/>
+            <flag name="top" value="0x0001"/>
+            <flag name="right" value="0x0002"/>
+            <flag name="bottom" value="0x0003"/>
+        </attr>
+        <attr name="arrowType"><!--箭头位置的偏移量-->
+            <flag name="left" value="0x0100"/>
+            <flag name="center" value="0x0101"/>
+            <flag name="right" value="0x0102"/>
+        </attr>
+        <attr name="cornerRadius" format="dimension"/><!--圆角的半径-->
+        <attr name="borderWidth" format="dimension"/><!--边框的的线条的宽度-->
+        <attr name="borderColor" format="color|reference"/><!--边框的的颜色-->
+
+        <attr name="arrow_width" format="dimension"/><!--箭头的宽度-->
+        <attr name="arrow_height" format="dimension"/> <!--箭头的高度-->
+        <attr name="arrowOffset" format="dimension"/><!--箭头位置的偏移量-->
+    </declare-styleable>
+
+
+    <declare-styleable name="ExpandableTextView">
+        <attr name="etv_MaxLinesOnShrink" format="reference|integer"/>
+        <attr name="etv_EllipsisHint" format="reference|string"/><!--default is ..-->
+        <attr name="etv_ToExpandHint" format="reference|string"/><!--"展开“提示字符串，默认为”展开"-->
+        <attr name="etv_ToShrinkHint" format="reference|string"/><!--"收起“提示字符串，默认为”收起"-->
+        <attr name="etv_GapToExpandHint" format="reference|string"/><!--展开与文本之间的距离-->
+        <attr name="etv_GapToShrinkHint" format="reference|string"/><!--收起与文本之间的距离"-->
+        <attr name="etv_EnableToggle" format="reference|boolean"/><!--如果单击“扩展文本视图”时切换状态-->
+        <attr name="etv_ToExpandHintShow" format="reference|boolean"/><!--是否显示展开提示-->
+        <attr name="etv_ToShrinkHintShow" format="reference|boolean"/><!--是否显示收缩提示-->
+        <attr name="etv_ToExpandHintColor" format="reference|color"/><!--显示展开提示-->
+        <attr name="etv_ToShrinkHintColor" format="reference|color"/><!--显示收缩提示-->
+        <attr name="etv_ToExpandHintColorBgPressed" format="reference|color"/><!--展开的背景颜色-->
+        <attr name="etv_ToShrinkHintColorBgPressed" format="reference|color"/><!--收起的背景颜色-->
+        <attr name="etv_InitState" format="enum"><!--默认为收缩-->
+            <enum name="shrink" value="0"/>
+            <enum name="expand" value="1"/>
+        </attr>
+    </declare-styleable>
+
+
+
+    <!--侧滑返回-->
+    <declare-styleable name="SwipeBackLayout">
+        <attr name="edge_size" format="dimension"/>
+        <attr name="edge_flag">
+            <enum name="left" value="0"/>
+            <enum name="right" value="1"/>
+            <enum name="bottom" value="2"/>
+            <enum name="all" value="3"/>
+        </attr>
+        <attr name="shadow_left" format="reference"/>
+        <attr name="shadow_right" format="reference"/>
+        <attr name="shadow_bottom" format="reference"/>
+    </declare-styleable>
+
+    <attr name="SwipeBackLayoutStyle" format="reference"/>
+
+
+    <declare-styleable name="TabView">
+        <attr name="tab_checked" format="boolean"/>
+        <attr name="tab_name" format="string"/>
+        <attr name="tab_nameSize" format="dimension"/>
+        <attr name="tab_nameColor" format="color"/>
+        <attr name="tab_nameSelectColor" format="color"/>
+
+        <attr name="tab_icon" format="reference"/>
+        <attr name="tab_iconSelect" format="reference"/>
+
+        <attr name="tab_text" format="string"/>
+        <attr name="tab_textColor" format="color"/>
+        <attr name="tab_textSize" format="dimension"/>
+        <attr name="tab_background" format="color"/>
+
+    </declare-styleable>
+
+</resources>

@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">玩安卓</string>
+
+    <string name="str_home">首页</string>
+    <string name="str_other">其他</string>
+    <string name="str_search_hint">搜索关键字以空格形式隔开</string>
+    <string name="str_new">新</string>
+
+</resources>

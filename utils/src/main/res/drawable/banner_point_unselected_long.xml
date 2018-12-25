@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:Android="http://schemas.android.com/apk/res/android">
+    <item
+        Android:id="@+id/user_faceback_drawable"
+        Android:drawable="@color/translate"/>
+    <item
+        Android:id="@+id/user_face_drawable"
+        Android:drawable="@drawable/banner_point_selected_t"
+        Android:left="4.5dp"
+        Android:right="4.5dp"/>
+</layer-list>
+

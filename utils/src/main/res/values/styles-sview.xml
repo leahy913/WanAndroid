@@ -1,0 +1,140 @@
+<resources>
+
+
+    <style name="text_black_big">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/text_color_black</item>
+        <item name="android:textSize">@dimen/font_size_big</item>
+
+    </style>
+
+    <style name="text_black_default">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/text_color_black</item>
+        <item name="android:textSize">@dimen/font_size_default</item>
+
+    </style>
+
+    <style name="text_black_small">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/text_color_black</item>
+        <item name="android:textSize">@dimen/font_size_small</item>
+
+    </style>
+
+    <style name="text_gray_default">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/text_color_gray</item>
+        <item name="android:textSize">@dimen/font_size_default</item>
+
+    </style>
+
+    <style name="text_gray_dark_default">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/text_color_gray_dark</item>
+        <item name="android:textSize">@dimen/font_size_default</item>
+
+    </style>
+
+
+    <style name="text_gray_small">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/text_color_gray</item>
+        <item name="android:textSize">@dimen/font_size_small</item>
+
+    </style>
+
+    <style name="text_gray_dark_small">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/text_color_gray_dark</item>
+        <item name="android:textSize">@dimen/font_size_small</item>
+
+    </style>
+
+
+    <style name="tab_gray_dark_big" parent="Widget.Design.TabLayout">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="tabBackground">@drawable/ripple</item>
+        <item name="tabSelectedTextColor">@color/colorAccent</item>
+        <item name="tabTextAppearance">@style/tab_text_gray_dark_big</item>
+
+    </style>
+
+    <style name="tab_text_gray_dark_big" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">@dimen/font_size_big</item>
+        <item name="android:textColor">@color/text_color_gray_dark</item>
+        <item name="textAllCaps">true</item>
+    </style>
+
+
+    <style name="tab_gray_dark_default" parent="Widget.Design.TabLayout">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="tabBackground">@drawable/ripple</item>
+        <item name="tabSelectedTextColor">@color/colorAccent</item>
+        <item name="tabTextAppearance">@style/tab_text_gray_dark_default</item>
+
+    </style>
+
+
+    <style name="tab_text_gray_dark_default" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">@dimen/font_size_big</item>
+        <item name="android:textColor">@color/text_color_black</item>
+        <item name="textAllCaps">true</item>
+    </style>
+
+
+    <style name="btn_blue">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/btn_height</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">@dimen/font_size_default</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/btn_blue_ripple</item>
+
+    </style>
+
+
+    <style name="btn_gray">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/btn_height</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">@dimen/font_size_default</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/btn_gray_ripple</item>
+
+    </style>
+
+    <style name="btn_white">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/btn_height</item>
+        <item name="android:textColor">@color/text_color_gray_dark</item>
+        <item name="android:textSize">@dimen/font_size_default</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/btn_white_ripple</item>
+
+    </style>
+
+
+    <style name="edit_text_default">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:textSize">@dimen/font_size_default</item>
+        <item name="android:textColor">@color/text_color_black</item>
+        <item name="android:textColorHint">@color/text_color_gray</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:gravity">start|center_vertical</item>
+        <item name="android:background">@null</item>
+        <item name="android:singleLine">true</item>
+
+    </style>
+
+</resources>

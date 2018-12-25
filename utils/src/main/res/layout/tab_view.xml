@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center|center_vertical">
+
+    <ImageView
+        android:id="@+id/tab_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:padding="4dp"/>
+
+    <ImageView
+        android:id="@+id/tab_icon_select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:padding="4dp"/>
+
+    <TextView
+        android:id="@+id/tab_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tab_icon"
+        android:gravity="center"
+        android:textColor="@android:color/darker_gray"/>
+
+    <TextView
+        android:id="@+id/tab_name_select"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tab_icon"
+        android:gravity="center"
+        android:textColor="@android:color/darker_gray"/>
+
+    <TextView
+        android:id="@+id/tab_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/tab_num_red_bg_shape"
+        android:gravity="center"
+        android:paddingLeft="5dp"
+        android:paddingTop="1dp"
+        android:paddingRight="5dp"
+        android:paddingBottom="1dp"
+        android:textColor="@android:color/white"
+        android:textSize="10sp"
+        android:visibility="gone"/>
+
+
+    <ImageView
+        android:id="@+id/tab_tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/tab_icon_select"
+        android:layout_alignEnd="@id/tab_icon_select"
+        android:src="@drawable/me_msg_red_dot"
+        android:visibility="gone"/>
+
+</RelativeLayout>

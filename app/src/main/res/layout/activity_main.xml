@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+
+        <com.github.mmin18.widget.RealtimeBlurView
+            android:id="@+id/blurView"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom"
+            android:orientation="vertical">
+
+            <include layout="@layout/include_line_horizontal"/>
+
+            <com.leahy.utils.tablayout.hometab.TabGroupView
+                android:id="@+id/tab_group"
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+
+                <com.leahy.utils.tablayout.hometab.TabView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/ripple_transparent"
+                    android:gravity="center_vertical"
+                    app:tab_checked="true"
+                    app:tab_icon="@drawable/ic_home_n"
+                    app:tab_iconSelect="@drawable/ic_home_s"
+                    app:tab_name="@string/str_home"
+                    app:tab_nameColor="@color/text_color_gray"
+                    app:tab_nameSelectColor="@color/colorAccent"
+                    app:tab_nameSize="@dimen/font_size_small"/>
+
+
+                <com.leahy.utils.tablayout.hometab.TabView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/ripple_transparent"
+                    android:gravity="center_vertical"
+                    app:tab_icon="@drawable/ic_home_n"
+                    app:tab_iconSelect="@drawable/ic_home_s"
+                    app:tab_name="@string/str_other"
+                    app:tab_nameColor="@color/text_color_gray"
+                    app:tab_nameSelectColor="@color/colorAccent"
+                    app:tab_nameSize="@dimen/font_size_small"/>
+
+
+            </com.leahy.utils.tablayout.hometab.TabGroupView>
+
+
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+
+</layout>

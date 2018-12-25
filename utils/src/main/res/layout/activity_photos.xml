@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<com.leahy.utils.image.photodrag.PhotoDragRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/group"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_bg"
+    android:onClick="showToolbar"
+    android:orientation="vertical">
+
+
+    <com.luck.picture.lib.photoview.PhotoView
+        android:id="@+id/photo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_height">
+
+
+        <ImageView
+            android:id="@+id/toolbar_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/margin_num3"
+            android:background="@drawable/ripple_edge"
+            android:onClick="back"
+            android:padding="7dp"
+            android:src="@drawable/ic_close_white"/>
+
+    </RelativeLayout>
+
+
+</com.leahy.utils.image.photodrag.PhotoDragRelativeLayout>

@@ -1,0 +1,52 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 28
+
+
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    api 'com.android.support:recyclerview-v7:28.0.0'
+    api 'com.android.support:cardview-v7:28.0.0'
+    api 'com.android.support:design:28.0.0'
+    api 'com.android.support:multidex:1.0.3'
+    api 'com.alibaba:fastjson:1.2.39'
+    api 'org.greenrobot:eventbus:3.1.1'
+    /*  ================ 图片浏览 =============== */
+    api 'com.github.LuckSiege.PictureSelector:picture_library:v2.2.3'
+    /*  ================ 工具 =============== */
+    api 'com.blankj:utilcode:1.11.1'
+    //网络
+    api 'com.lzy.net:okgo:3.0.4'
+    //万能适配器
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.35'
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <style name="text_touch">
+        <item name="android:textColor">@drawable/text_touch_color</item>
+        <item name="android:drawableTint">@drawable/text_touch_color</item>
+    </style>
+
+    <style name="text_touch_blue">
+        <item name="android:textColor">@drawable/text_touch_color_blue</item>
+        <item name="android:drawableTint">@drawable/text_touch_color_blue</item>
+    </style>
+
+
+</resources>

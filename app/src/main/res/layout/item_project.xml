@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <import type="com.leahy.utils.utils.StringUtils"/>
+
+
+        <variable
+            name="bean"
+            type="com.leahy.wanandroid.bean.project.ProjectBean.DatasBean"/>
+
+
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginStart="@dimen/margin_num2"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="@dimen/margin_num2"
+        android:layout_marginBottom="2dp"
+        android:foreground="?attr/selectableItemBackground"
+        app:cardCornerRadius="@dimen/radius_num"
+        app:cardElevation="0dp">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/margin_num3">
+
+            <TextView
+                android:id="@+id/title"
+                style="@style/text_black_default"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:lineSpacingExtra="5dp"
+                android:maxLines="2"
+                android:text="@{bean.title}"/>
+
+
+            <com.leahy.utils.radius.RadiusTextView
+                android:id="@+id/news"
+                style="@style/text_gray_small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="@dimen/margin_num3"
+                android:padding="3dp"
+                android:text="@string/str_new"
+                android:visibility="@{bean.fresh?View.VISIBLE:View.GONE}"
+                app:rv_radius="@dimen/radius_num"
+                app:rv_strokeColor="@color/text_color_red"
+                app:rv_strokeWidth="0.1dp"
+                app:rv_textColor="@color/text_color_red"/>
+
+
+            <com.leahy.utils.radius.RadiusTextView
+                android:id="@+id/author"
+                style="@style/text_gray_small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_toEndOf="@id/news"
+                android:padding="3dp"
+                android:text="@{bean.author}"
+                app:rv_radius="@dimen/radius_num"
+                app:rv_strokeColor="@color/text_color_gray"
+                app:rv_strokeWidth="0.1dp"/>
+
+
+            <com.leahy.utils.radius.RadiusTextView
+                android:id="@+id/time"
+                style="@style/text_gray_small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="5dp"
+                android:layout_toEndOf="@id/author"
+                android:padding="3dp"
+                android:text="@{StringUtils.getTimeSpanByNow(bean.publishTime)}"
+                app:rv_radius="@dimen/radius_num"
+                app:rv_strokeColor="@color/text_color_gray"
+                app:rv_strokeWidth="0.1dp"/>
+
+        </RelativeLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+
+</layout>
