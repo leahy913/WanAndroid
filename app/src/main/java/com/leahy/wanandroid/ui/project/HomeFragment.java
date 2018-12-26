@@ -36,6 +36,7 @@ public class HomeFragment extends BaseFragment<FragmentProjectHomeBinding> imple
 
     private HomeViewModel mViewModel;
     private List<Fragment> mFragments;
+    private boolean isVisibleToUser = false;
 
     public static HomeFragment newInstance() {
         return new HomeFragment();
@@ -59,6 +60,7 @@ public class HomeFragment extends BaseFragment<FragmentProjectHomeBinding> imple
 
     private void initView() {
         mViewModel = new HomeViewModel(mActivity, this);
+        mBinding.setView(this);
         mBinding.refresh.setOnRefreshListener(this);
         //状态栏
         StatusBarUtil.setMargin(mActivity, mBinding.include.header);
@@ -79,13 +81,26 @@ public class HomeFragment extends BaseFragment<FragmentProjectHomeBinding> imple
     }
 
     @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        if (!isFirst) {
+            this.isVisibleToUser = isVisibleToUser;
+            if (isVisibleToUser) {
+                mBinding.banner.startAutoPlay();
+            } else {
+                mBinding.banner.stopAutoPlay();
+            }
+        }
+    }
+
+    @Override
     protected void loadData() {
         super.loadData();
         if (!mIsVisible || !isPrepared || !isFirst) {
             return;
         }
         mViewModel.loadBanner();
-        isFirst = true;
+        isFirst = false;
     }
 
     @Override
@@ -98,6 +113,19 @@ public class HomeFragment extends BaseFragment<FragmentProjectHomeBinding> imple
         ActivityWeb.loadUrl(mActivity, mViewModel.mBanners.get(position).getUrl(), mViewModel.mBanners.get(position).getTitle());
     }
 
+    public void startSearchActivity() {
+        SearchActivity.start(mActivity);
+    }
+
+    public void scrollToTop() {
+        if (isVisibleToUser) {
+            isVisibleToUser = false;
+            return;
+        }
+        mBinding.refresh.autoRefresh();
+        ((BlogFragment) mFragments.get(mBinding.mViewPager.getCurrentItem())).scrollToTop();
+    }
+
     @Override
     public void onRefresh(@NonNull RefreshLayout refreshLayout) {
         ((BlogFragment) mFragments.get(mBinding.mViewPager.getCurrentItem())).onRefresh();
@@ -106,6 +134,7 @@ public class HomeFragment extends BaseFragment<FragmentProjectHomeBinding> imple
     public void finishRefresh() {
         mBinding.refresh.finishRefresh();
     }
+
 
     @Override
     public void onStart() {

@@ -2,10 +2,12 @@ package com.leahy.wanandroid.adapter.project;
 
 import android.app.Activity;
 import android.support.annotation.Nullable;
+import android.text.Html;
 import android.view.View;
 
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.leahy.utils.listener.PerfectClickListener;
+import com.leahy.utils.utils.CommonUtils;
 import com.leahy.utils.utils.StringUtils;
 import com.leahy.wanandroid.R;
 import com.leahy.wanandroid.adapter.BaseDataBindingAdapter;
@@ -21,21 +23,30 @@ import java.util.List;
  * Time:   2018/12/25
  * Description: ProjectAdapter
  */
-public class ProjectAdapter extends BaseDataBindingAdapter<ProjectBean.DatasBean, ItemProjectBinding> {
+public class SearchResultAdapter extends BaseDataBindingAdapter<ProjectBean.DatasBean, ItemProjectBinding> {
 
     private Activity mActivity;
+    private String key;
 
-    public ProjectAdapter(@Nullable List<ProjectBean.DatasBean> data, Activity mActivity) {
+    public SearchResultAdapter(Activity mActivity, @Nullable List<ProjectBean.DatasBean> data) {
         super(R.layout.item_project, data);
         this.mActivity = mActivity;
     }
 
+
     @Override
     protected void converts(BaseViewHolder helper, ItemProjectBinding binding, final ProjectBean.DatasBean item, int position) {
 
-        binding.setTitle(item.getTitle());
+        if (item.getTitle().contains(key)) {
+            try {
+                binding.setTitle(StringUtils.style(Html.fromHtml(item.getTitle()).toString(), key, CommonUtils.getColor(R.color.text_color_red)));
+            } catch (Exception e) {
+                binding.setTitle(Html.fromHtml(item.getTitle()).toString());
+            }
+        } else {
+            binding.setTitle(Html.fromHtml(item.getTitle()).toString());
+        }
         binding.setFresh(item.isFresh());
-
         binding.setTags(item.getTags() != null && item.getTags().size() > 0 ? item.getTags().get(0).getName() : null);
         binding.setAuthor(item.getAuthor());
         binding.setTime(StringUtils.getTimeSpanByNow(item.getPublishTime()));
@@ -47,5 +58,14 @@ public class ProjectAdapter extends BaseDataBindingAdapter<ProjectBean.DatasBean
                 ActivityWeb.loadUrl(mActivity, item.getLink(), item.getTitle());
             }
         });
+    }
+
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
     }
 }

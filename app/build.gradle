@@ -44,5 +44,8 @@ dependencies {
     //1.0.5 当1.1.0出现问题可以回退到1.0.5.1
     api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-14'
     api 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-14'
+    //高斯
     api 'com.github.mmin18:realtimeblurview:1.0.6'
+    //RecyclerView 流式布局
+    api 'com.beloo.widget:ChipsLayoutManager:0.3.7@aar'
 }

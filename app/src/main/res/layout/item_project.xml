@@ -7,12 +7,28 @@
 
         <import type="android.view.View"/>
 
-        <import type="com.leahy.utils.utils.StringUtils"/>
+        <import type="android.text.TextUtils"/>
+
+        <variable
+            name="title"
+            type="CharSequence"/>
+
+        <variable
+            name="fresh"
+            type="Boolean"/>
+
+        <variable
+            name="tags"
+            type="String"/>
 
 
         <variable
-            name="bean"
-            type="com.leahy.wanandroid.bean.project.ProjectBean.DatasBean"/>
+            name="author"
+            type="String"/>
+
+        <variable
+            name="time"
+            type="String"/>
 
 
     </data>
@@ -42,7 +58,7 @@
                 android:ellipsize="end"
                 android:lineSpacingExtra="5dp"
                 android:maxLines="2"
-                android:text="@{bean.title}"/>
+                android:text="@{title}"/>
 
 
             <com.leahy.utils.radius.RadiusTextView
@@ -54,11 +70,28 @@
                 android:layout_marginEnd="@dimen/margin_num3"
                 android:padding="3dp"
                 android:text="@string/str_new"
-                android:visibility="@{bean.fresh?View.VISIBLE:View.GONE}"
+                android:visibility="@{fresh?View.VISIBLE:View.GONE}"
                 app:rv_radius="@dimen/radius_num"
                 app:rv_strokeColor="@color/text_color_red"
                 app:rv_strokeWidth="0.1dp"
                 app:rv_textColor="@color/text_color_red"/>
+
+
+            <com.leahy.utils.radius.RadiusTextView
+                android:id="@+id/tags"
+                style="@style/text_gray_small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="@dimen/margin_num3"
+                android:layout_toEndOf="@id/news"
+                android:padding="3dp"
+                android:text="@{tags}"
+                android:visibility="@{TextUtils.isEmpty(tags)?View.GONE:View.VISIBLE}"
+                app:rv_radius="@dimen/radius_num"
+                app:rv_strokeColor="@color/colorAccent"
+                app:rv_strokeWidth="0.1dp"
+                app:rv_textColor="@color/colorAccent"/>
 
 
             <com.leahy.utils.radius.RadiusTextView
@@ -67,9 +100,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:layout_toEndOf="@id/news"
+                android:layout_marginEnd="@dimen/margin_num3"
+                android:layout_toEndOf="@id/tags"
                 android:padding="3dp"
-                android:text="@{bean.author}"
+                android:text="@{author}"
                 app:rv_radius="@dimen/radius_num"
                 app:rv_strokeColor="@color/text_color_gray"
                 app:rv_strokeWidth="0.1dp"/>
@@ -81,10 +115,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="5dp"
+                android:layout_marginEnd="@dimen/margin_num3"
                 android:layout_toEndOf="@id/author"
                 android:padding="3dp"
-                android:text="@{StringUtils.getTimeSpanByNow(bean.publishTime)}"
+                android:text="@{time}"
                 app:rv_radius="@dimen/radius_num"
                 app:rv_strokeColor="@color/text_color_gray"
                 app:rv_strokeWidth="0.1dp"/>

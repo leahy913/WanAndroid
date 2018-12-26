@@ -4,7 +4,6 @@
           package="com.leahy.wanandroid">
 
 
-
     <application
         android:name=".app.App"
         android:allowBackup="true"
@@ -14,6 +13,7 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning"
         tools:replace="android:name,android:icon,android:label,android:theme">
 
 
@@ -25,7 +25,11 @@
             </intent-filter>
 
         </activity>
+
         <activity android:name=".ui.webview.ActivityWeb"/>
+        <activity
+            android:name=".ui.project.SearchActivity"
+            android:windowSoftInputMode="stateVisible|adjustPan"/>
 
 
     </application>

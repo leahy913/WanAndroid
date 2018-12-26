@@ -3,6 +3,15 @@
         xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
+    <data>
+
+
+        <variable
+            name="view"
+            type="com.leahy.wanandroid.ui.project.HomeFragment"/>
+
+    </data>
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -123,6 +132,7 @@
                 android:drawableStart="@drawable/ic_search"
                 android:drawablePadding="5dp"
                 android:hint="@string/str_search_hint"
+                android:onClick="@{()->view.startSearchActivity()}"
                 android:singleLine="true"
                 app:rv_radius="@dimen/radius_num"
                 app:rv_rippleEnable="true"

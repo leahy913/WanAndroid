@@ -8,7 +8,8 @@ import android.view.KeyEvent;
 
 import com.leahy.utils.adapter.BaseTabAdapter;
 import com.leahy.utils.statusbar.StatusBarUtil;
-import com.leahy.utils.utils.CommonUtils;
+import com.leahy.utils.tablayout.hometab.TabGroupView;
+import com.leahy.utils.tablayout.hometab.TabView;
 import com.leahy.utils.utils.Show;
 import com.leahy.wanandroid.R;
 import com.leahy.wanandroid.databinding.ActivityMainBinding;
@@ -25,7 +26,7 @@ import java.util.List;
  * Description: MainActivity
  */
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements TabGroupView.OnItemClickListener {
 
     private ActivityMainBinding mBinding;
     private List<Fragment> mFragments;
@@ -44,7 +45,16 @@ public class MainActivity extends AppCompatActivity {
         mFragments.add(NullFragment.newInstance());
         mBinding.viewPager.setAdapter(new BaseTabAdapter(getSupportFragmentManager(), mFragments));
         mBinding.tabGroup.setViewPager(mBinding.viewPager);
+        mBinding.tabGroup.setOnItemClickListener(this);
 
+    }
+
+    @Override
+    public void onClick(TabView tabLayout, int position) {
+        mBinding.viewPager.setCurrentItem(position, false);
+        if (position == 0) {
+            ((HomeFragment) mFragments.get(0)).scrollToTop();
+        }
     }
 
 
@@ -67,4 +77,6 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onKeyDown(keyCode, event);
     }
+
+
 }

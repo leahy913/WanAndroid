@@ -40,13 +40,6 @@ public class TabGroupView extends LinearLayout implements ViewPager.OnPageChange
     public void setViewPager(ViewPager vp) {
         this.mViewPager = vp;
         mViewPager.addOnPageChangeListener(this);
-
-        this.setOnItemClickListener(new OnItemClickListener() {
-            @Override
-            public void onClick(TabView tabLayout, int position) {
-                mViewPager.setCurrentItem(position, false);
-            }
-        });
     }
 
     /**

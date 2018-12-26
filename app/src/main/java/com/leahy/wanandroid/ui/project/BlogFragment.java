@@ -36,7 +36,7 @@ public class BlogFragment extends BaseFragment<FragmentHomeRecyclerViewBinding> 
 
     public static BlogFragment newInstance(int type) {
         Bundle args = new Bundle();
-        args.getInt(TYPE, type);
+        args.putInt(TYPE, type);
         BlogFragment fragment = new BlogFragment();
         fragment.setArguments(args);
         return fragment;
@@ -84,6 +84,10 @@ public class BlogFragment extends BaseFragment<FragmentHomeRecyclerViewBinding> 
     }
 
 
+    public void scrollToTop() {
+        mBinding.recycler.smoothScrollToPosition(0);
+    }
+
     @Override
     public void onRefresh() {
         mViewModel.setPage(App.START_PAGE);
@@ -100,7 +104,7 @@ public class BlogFragment extends BaseFragment<FragmentHomeRecyclerViewBinding> 
         showContentView();
         mHomeFragment.finishRefresh();
         isFirst = true;
-        if (mViewModel.getPage() == App.START_PAGE) {
+        if (mViewModel.getPage() == App.START_PAGE + 1) {
             mAdapter.setNewData(blogs);
         } else {
             mAdapter.addData(blogs);
@@ -114,6 +118,7 @@ public class BlogFragment extends BaseFragment<FragmentHomeRecyclerViewBinding> 
 
     @Override
     public void loadBlogError() {
+        mHomeFragment.finishRefresh();
         showError();
     }
 

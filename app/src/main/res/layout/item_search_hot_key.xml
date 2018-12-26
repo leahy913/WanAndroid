@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+
+        <variable
+            name="hotKey"
+            type="String"/>
+
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.leahy.utils.radius.RadiusTextView
+            android:id="@+id/hot_key"
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="@dimen/margin_num3"
+            android:layout_marginBottom="2dp"
+            android:gravity="center"
+            android:paddingStart="@dimen/margin_num3"
+            android:paddingEnd="@dimen/margin_num3"
+            android:text="@{hotKey}"
+            android:textSize="@dimen/font_size_small"
+            app:rv_rippleEnable="true"
+            app:rv_strokeColor="@color/text_color_orange"
+            app:rv_strokeWidth="0.1dp"
+            app:rv_textColor="@color/text_color_orange"/>
+
+    </RelativeLayout>
+
+
+</layout>
