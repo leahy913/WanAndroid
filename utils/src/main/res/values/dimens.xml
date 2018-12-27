@@ -18,6 +18,8 @@
     <dimen name="toolbar_height">48dp</dimen>
     <dimen name="editText_height">40dp</dimen>
     <dimen name="tab_height">50dp</dimen>
+    <!--公众号主页 顶部toolbar加tab加上下间距（margin_num3）高度-->
+    <dimen name="toolbar_tab">108dp</dimen>
 
     <dimen name="toolbar_menu_width">60dp</dimen>
 

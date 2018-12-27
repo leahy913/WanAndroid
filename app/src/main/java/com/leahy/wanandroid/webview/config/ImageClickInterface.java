@@ -1,4 +1,4 @@
-package com.leahy.wanandroid.ui.webview.config;
+package com.leahy.wanandroid.webview.config;
 
 import android.app.Activity;
 import android.webkit.JavascriptInterface;

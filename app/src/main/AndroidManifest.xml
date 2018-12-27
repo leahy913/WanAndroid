@@ -26,7 +26,7 @@
 
         </activity>
 
-        <activity android:name=".ui.webview.ActivityWeb"/>
+        <activity android:name=".webview.ActivityWeb"/>
         <activity
             android:name=".ui.project.SearchActivity"
             android:windowSoftInputMode="stateVisible|adjustPan"/>

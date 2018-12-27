@@ -1,4 +1,4 @@
-package com.leahy.wanandroid.ui.webview.sonic;
+package com.leahy.wanandroid.webview.sonic;
 
 import android.content.Context;
 import android.content.Intent;

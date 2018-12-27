@@ -14,6 +14,7 @@ import com.leahy.utils.utils.Show;
 import com.leahy.wanandroid.R;
 import com.leahy.wanandroid.databinding.ActivityMainBinding;
 import com.leahy.wanandroid.ui.project.HomeFragment;
+import com.leahy.wanandroid.ui.wxarticle.WxHomeFragment;
 import com.lzy.okgo.OkGo;
 
 import java.util.ArrayList;
@@ -42,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements TabGroupView.OnIt
     private void initContentFragment() {
         mFragments = new ArrayList<>();
         mFragments.add(HomeFragment.newInstance());
-        mFragments.add(NullFragment.newInstance());
+        mFragments.add(WxHomeFragment.newInstance());
         mBinding.viewPager.setAdapter(new BaseTabAdapter(getSupportFragmentManager(), mFragments));
         mBinding.tabGroup.setViewPager(mBinding.viewPager);
         mBinding.tabGroup.setOnItemClickListener(this);

@@ -12,7 +12,7 @@ import com.leahy.utils.base.BaseFragment;
 import com.leahy.utils.statusbar.StatusBarUtil;
 import com.leahy.wanandroid.R;
 import com.leahy.wanandroid.databinding.FragmentProjectHomeBinding;
-import com.leahy.wanandroid.ui.webview.ActivityWeb;
+import com.leahy.wanandroid.webview.ActivityWeb;
 import com.leahy.wanandroid.utils.GlideImageLoader;
 import com.leahy.wanandroid.viewmodel.projrct.HomeNavigator;
 import com.leahy.wanandroid.viewmodel.projrct.HomeViewModel;
@@ -95,7 +95,6 @@ public class HomeFragment extends BaseFragment<FragmentProjectHomeBinding> imple
 
     @Override
     protected void loadData() {
-        super.loadData();
         if (!mIsVisible || !isPrepared || !isFirst) {
             return;
         }

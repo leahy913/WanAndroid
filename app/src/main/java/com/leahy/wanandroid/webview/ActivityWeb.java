@@ -1,4 +1,4 @@
-package com.leahy.wanandroid.ui.webview;
+package com.leahy.wanandroid.webview;
 
 import android.annotation.TargetApi;
 import android.content.ClipboardManager;
@@ -32,13 +32,13 @@ import com.leahy.utils.statusbar.StatusBarUtil;
 import com.leahy.utils.utils.CommonUtils;
 import com.leahy.utils.utils.Show;
 import com.leahy.wanandroid.R;
-import com.leahy.wanandroid.ui.webview.config.FullscreenHolder;
-import com.leahy.wanandroid.ui.webview.config.IWebPageView;
-import com.leahy.wanandroid.ui.webview.config.ImageClickInterface;
-import com.leahy.wanandroid.ui.webview.config.MyWebChromeClient;
-import com.leahy.wanandroid.ui.webview.sonic.OfflinePkgSessionConnection;
-import com.leahy.wanandroid.ui.webview.sonic.SonicRuntimeImpl;
-import com.leahy.wanandroid.ui.webview.sonic.SonicSessionClientImpl;
+import com.leahy.wanandroid.webview.config.FullscreenHolder;
+import com.leahy.wanandroid.webview.config.IWebPageView;
+import com.leahy.wanandroid.webview.config.ImageClickInterface;
+import com.leahy.wanandroid.webview.config.MyWebChromeClient;
+import com.leahy.wanandroid.webview.sonic.OfflinePkgSessionConnection;
+import com.leahy.wanandroid.webview.sonic.SonicRuntimeImpl;
+import com.leahy.wanandroid.webview.sonic.SonicSessionClientImpl;
 import com.tencent.sonic.sdk.SonicCacheInterceptor;
 import com.tencent.sonic.sdk.SonicConfig;
 import com.tencent.sonic.sdk.SonicEngine;

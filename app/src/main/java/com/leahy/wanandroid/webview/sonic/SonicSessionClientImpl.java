@@ -1,4 +1,4 @@
-package com.leahy.wanandroid.ui.webview.sonic;
+package com.leahy.wanandroid.webview.sonic;
 
 import android.os.Bundle;
 import android.webkit.WebView;

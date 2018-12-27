@@ -1,4 +1,4 @@
-package com.leahy.wanandroid.ui.webview.config;
+package com.leahy.wanandroid.webview.config;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -11,7 +11,7 @@ import android.webkit.WebView;
 
 
 import com.leahy.wanandroid.R;
-import com.leahy.wanandroid.ui.webview.ActivityWeb;
+import com.leahy.wanandroid.webview.ActivityWeb;
 
 import static android.app.Activity.RESULT_OK;
 

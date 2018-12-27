@@ -13,7 +13,7 @@ import com.leahy.wanandroid.R;
 import com.leahy.wanandroid.adapter.BaseDataBindingAdapter;
 import com.leahy.wanandroid.bean.project.ProjectBean;
 import com.leahy.wanandroid.databinding.ItemProjectBinding;
-import com.leahy.wanandroid.ui.webview.ActivityWeb;
+import com.leahy.wanandroid.webview.ActivityWeb;
 
 import java.util.List;
 

@@ -22,6 +22,7 @@ public class App extends Application {
 
     private static App app;
     public static int START_PAGE = 0;
+    public static int START_PAGES = 1;
 
     @Override
     public void onCreate() {
