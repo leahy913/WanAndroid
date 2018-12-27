@@ -48,4 +48,26 @@
     <color name="answer_error">#ee3e3e</color>
 
 
+    <color name="color_1">#00ffff</color>
+    <color name="color_2">#7fffd4</color>
+    <color name="color_3">#8a2be2</color>
+    <color name="color_4">#6495ed</color>
+    <color name="color_5">#00ced1</color>
+    <color name="color_6">#9400d3</color>
+    <color name="color_7">#ff1493</color>
+    <color name="color_8">#1e90ff</color>
+    <color name="color_9">#ff00ff</color>
+    <color name="color_10">#008000</color>
+    <color name="color_11">#adff2f</color>
+    <color name="color_12">#ff69b4</color>
+    <color name="color_13">#7cfc00</color>
+    <color name="color_14">#20b2aa</color>
+    <color name="color_15">#ba55d3</color>
+    <color name="color_16">#9370db</color>
+    <color name="color_17">#3cb371</color>
+    <color name="color_18">#7b68ee</color>
+    <color name="color_19">#4169e1</color>
+    <color name="color_20">#6a5acd</color>
+
+
 </resources>

@@ -15,9 +15,9 @@ import android.widget.TextView;
 
 import com.beloo.widget.chipslayoutmanager.ChipsLayoutManager;
 import com.blankj.utilcode.util.KeyboardUtils;
-import com.blankj.utilcode.util.LogUtils;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.leahy.utils.base.BaseActivity;
+import com.leahy.utils.utils.CommonUtils;
 import com.leahy.wanandroid.R;
 import com.leahy.wanandroid.adapter.BaseDataBindingAdapter;
 import com.leahy.wanandroid.adapter.project.HotKeyAdapter;
@@ -57,6 +57,7 @@ public class SearchActivity extends BaseActivity<ActivitySearchBinding> implemen
         mViewModel = new SearchViewModel(mActivity, this);
         mBinding.setView(this);
         mBinding.setIsShowHot(false);
+        mBinding.setIsShowClose(false);
         mBinding.refresh.setColorSchemeResources(R.color.colorAccent);
         mBinding.refresh.setOnRefreshListener(this);
         mBinding.refresh.setEnabled(false);
@@ -117,13 +118,11 @@ public class SearchActivity extends BaseActivity<ActivitySearchBinding> implemen
         onBackPressed();
     }
 
-    public void search() {
-        if (TextUtils.isEmpty(mBinding.search.getText())) return;
-        if (!mBinding.refresh.isRefreshing()) mBinding.refresh.setRefreshing(true);
-        mViewModel.setPage(App.START_PAGE);
-        mViewModel.setKey(mBinding.search.getText().toString());
-        mSearchResultAdapter.setKey(mViewModel.getKey());
-        mViewModel.loadSearchData();
+    public void closeInput() {
+        KeyboardUtils.showSoftInput(mActivity);
+        mBinding.search.setText("");
+        mBinding.refresh.setEnabled(false);
+        mSearchResultAdapter.setNewData(null);
     }
 
 
@@ -152,6 +151,15 @@ public class SearchActivity extends BaseActivity<ActivitySearchBinding> implemen
     }
 
 
+    private void search() {
+        if (TextUtils.isEmpty(mBinding.search.getText())) return;
+        if (!mBinding.refresh.isRefreshing()) mBinding.refresh.setRefreshing(true);
+        mViewModel.setPage(App.START_PAGE);
+        mViewModel.setKey(mBinding.search.getText().toString());
+        mSearchResultAdapter.setKey(mViewModel.getKey());
+        mViewModel.loadSearchData();
+    }
+
     /**
      * 搜索结果
      */
@@ -160,7 +168,7 @@ public class SearchActivity extends BaseActivity<ActivitySearchBinding> implemen
         KeyboardUtils.hideSoftInput(mActivity);
         mBinding.refresh.setEnabled(true);
         mBinding.refresh.setRefreshing(false);
-        if (mViewModel.getPage() == App.START_PAGE + 1) {
+        if (mViewModel.getPage() == App.START_PAGE) {
             mSearchResultAdapter.setNewData(beans);
         } else {
             mSearchResultAdapter.addData(beans);
@@ -186,7 +194,7 @@ public class SearchActivity extends BaseActivity<ActivitySearchBinding> implemen
 
     @Override
     public void afterTextChanged(Editable s) {
-
+        mBinding.setIsShowClose(s.length() > 0);
     }
 
 

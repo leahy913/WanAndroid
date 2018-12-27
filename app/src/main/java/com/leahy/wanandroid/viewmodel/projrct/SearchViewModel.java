@@ -62,8 +62,8 @@ public class SearchViewModel extends ViewModel {
         ProjectApi.postQuery(mActivity, key, page, new JsonCallback<ProjectBean>() {
             @Override
             public void onSuccess(ProjectBean result) {
-                page = result.getCurPage();
                 navigator.showSearchResult(result.getDatas(), result.isOver());
+                page = result.getCurPage();
             }
 
             @Override

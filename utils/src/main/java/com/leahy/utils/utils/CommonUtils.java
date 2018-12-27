@@ -8,8 +8,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 
+import com.leahy.utils.R;
+
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -83,5 +88,36 @@ public class CommonUtils {
             }
         }
     }
+
+    private static List<Integer> colors;
+
+    public static int getRandomColor() {
+        if (colors == null) {
+            colors = new ArrayList<>();
+            colors.add(getResoure().getColor(R.color.color_1));
+            colors.add(getResoure().getColor(R.color.color_2));
+            colors.add(getResoure().getColor(R.color.color_3));
+            colors.add(getResoure().getColor(R.color.color_4));
+            colors.add(getResoure().getColor(R.color.color_5));
+            colors.add(getResoure().getColor(R.color.color_6));
+            colors.add(getResoure().getColor(R.color.color_7));
+            colors.add(getResoure().getColor(R.color.color_8));
+            colors.add(getResoure().getColor(R.color.color_9));
+            colors.add(getResoure().getColor(R.color.color_10));
+            colors.add(getResoure().getColor(R.color.color_11));
+            colors.add(getResoure().getColor(R.color.color_12));
+            colors.add(getResoure().getColor(R.color.color_13));
+            colors.add(getResoure().getColor(R.color.color_14));
+            colors.add(getResoure().getColor(R.color.color_15));
+            colors.add(getResoure().getColor(R.color.color_16));
+            colors.add(getResoure().getColor(R.color.color_17));
+            colors.add(getResoure().getColor(R.color.color_18));
+            colors.add(getResoure().getColor(R.color.color_19));
+            colors.add(getResoure().getColor(R.color.color_20));
+        }
+        Collections.shuffle(colors);
+        return colors.get(0);
+    }
+
 
 }

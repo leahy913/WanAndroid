@@ -29,9 +29,9 @@
             android:text="@{hotKey}"
             android:textSize="@dimen/font_size_small"
             app:rv_rippleEnable="true"
-            app:rv_strokeColor="@color/text_color_orange"
+            app:rv_strokeColor="@color/text_color_gray"
             app:rv_strokeWidth="0.1dp"
-            app:rv_textColor="@color/text_color_orange"/>
+            app:rv_textColor="@color/text_color_gray"/>
 
     </RelativeLayout>
 

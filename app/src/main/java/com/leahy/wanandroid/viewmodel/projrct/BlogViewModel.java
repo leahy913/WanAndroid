@@ -45,8 +45,8 @@ public class BlogViewModel extends ViewModel implements JsonCallback<ProjectBean
 
     @Override
     public void onSuccess(ProjectBean result) {
-        page = result.getCurPage();
         navigator.showBlogList(result.getDatas(), result.isOver());
+        page = result.getCurPage();
     }
 
     @Override

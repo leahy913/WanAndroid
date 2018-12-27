@@ -15,6 +15,10 @@
             name="isShowHot"
             type="Boolean"/>
 
+        <variable
+            name="isShowClose"
+            type="Boolean"/>
+
 
     </data>
 
@@ -77,10 +81,11 @@
                     android:layout_height="match_parent"
                     android:layout_margin="1dp"
                     android:background="@drawable/ripple"
-                    android:onClick="@{()->view.search()}"
-                    android:paddingStart="@dimen/margin_num3"
-                    android:paddingEnd="@dimen/margin_num3"
-                    android:src="@drawable/ic_search"/>
+                    android:onClick="@{()->view.closeInput()}"
+                    android:paddingStart="@dimen/margin_num2"
+                    android:paddingEnd="@dimen/margin_num2"
+                    android:src="@drawable/ic_input_close"
+                    android:visibility="@{isShowClose?View.VISIBLE:View.GONE}"/>
 
 
             </com.leahy.utils.radius.RadiusLinearLayout>

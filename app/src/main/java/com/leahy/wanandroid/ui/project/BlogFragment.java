@@ -96,21 +96,21 @@ public class BlogFragment extends BaseFragment<FragmentHomeRecyclerViewBinding> 
 
     @Override
     public void onLoadMoreRequested() {
-        onRefresh();
+        mViewModel.loadData();
     }
 
     @Override
     public void showBlogList(List<ProjectBean.DatasBean> blogs, boolean isOver) {
         showContentView();
         mHomeFragment.finishRefresh();
-        isFirst = true;
-        if (mViewModel.getPage() == App.START_PAGE + 1) {
+        isFirst = false;
+        if (mViewModel.getPage() == App.START_PAGE) {
             mAdapter.setNewData(blogs);
         } else {
             mAdapter.addData(blogs);
         }
         if (isOver) {
-            mAdapter.loadMoreEnd(isOver);
+            mAdapter.loadMoreEnd(true);
         } else {
             mAdapter.loadMoreComplete();
         }
@@ -118,6 +118,7 @@ public class BlogFragment extends BaseFragment<FragmentHomeRecyclerViewBinding> 
 
     @Override
     public void loadBlogError() {
+        isFirst = true;
         mHomeFragment.finishRefresh();
         showError();
     }
