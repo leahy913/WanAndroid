@@ -17,7 +17,6 @@ import com.beloo.widget.chipslayoutmanager.ChipsLayoutManager;
 import com.blankj.utilcode.util.KeyboardUtils;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.leahy.utils.base.BaseActivity;
-import com.leahy.utils.utils.CommonUtils;
 import com.leahy.wanandroid.R;
 import com.leahy.wanandroid.adapter.BaseDataBindingAdapter;
 import com.leahy.wanandroid.adapter.project.HotKeyAdapter;
@@ -50,7 +49,6 @@ public class SearchActivity extends BaseActivity<ActivitySearchBinding> implemen
         showContentView();
         hideToolbar();
         initView();
-        initHistory();
     }
 
     private void initView() {
@@ -80,11 +78,6 @@ public class SearchActivity extends BaseActivity<ActivitySearchBinding> implemen
     }
 
 
-    private void initHistory() {
-        //TODO 后续添加
-    }
-
-
     @Override
     public void showHotKey(List<HotKeyBean> mHotKeys) {
         mBinding.setIsShowHot(true);
@@ -105,12 +98,6 @@ public class SearchActivity extends BaseActivity<ActivitySearchBinding> implemen
     @Override
     public void onLoadMoreRequested() {
         mViewModel.loadSearchData();
-    }
-
-
-    @Override
-    public void searchError() {
-        mBinding.refresh.setRefreshing(false);
     }
 
 
@@ -156,7 +143,6 @@ public class SearchActivity extends BaseActivity<ActivitySearchBinding> implemen
         if (!mBinding.refresh.isRefreshing()) mBinding.refresh.setRefreshing(true);
         mViewModel.setPage(App.START_PAGE);
         mViewModel.setKey(mBinding.search.getText().toString());
-        mSearchResultAdapter.setKey(mViewModel.getKey());
         mViewModel.loadSearchData();
     }
 
@@ -169,6 +155,7 @@ public class SearchActivity extends BaseActivity<ActivitySearchBinding> implemen
         mBinding.refresh.setEnabled(true);
         mBinding.refresh.setRefreshing(false);
         if (mViewModel.getPage() == App.START_PAGE) {
+            mSearchResultAdapter.setKey(mViewModel.getKey());
             mSearchResultAdapter.setNewData(beans);
         } else {
             mSearchResultAdapter.addData(beans);
@@ -181,6 +168,16 @@ public class SearchActivity extends BaseActivity<ActivitySearchBinding> implemen
 
     }
 
+
+    @Override
+    public void searchError() {
+        mBinding.refresh.setRefreshing(false);
+        if (mViewModel.getPage() > App.START_PAGES) {
+            mSearchResultAdapter.loadMoreFail();
+        } else {
+            mBinding.refresh.setRefreshing(false);
+        }
+    }
 
     @Override
     public void beforeTextChanged(CharSequence s, int start, int count, int after) {

@@ -5,7 +5,7 @@ import android.content.Context;
 import com.leahy.utils.network.JsonCallback;
 import com.leahy.utils.network.JsonCallbackArray;
 import com.leahy.wanandroid.bean.project.ProjectBean;
-import com.leahy.wanandroid.bean.wxarticle.ChaptersBean;
+import com.leahy.wanandroid.bean.article.ChaptersBean;
 import com.leahy.wanandroid.network.http.Callback;
 import com.leahy.wanandroid.network.http.YcxOkGo;
 import com.lzy.okgo.OkGo;
@@ -14,9 +14,9 @@ import com.lzy.okgo.OkGo;
  * company ：创序信息科技有限公司
  * Author: leahy
  * Time:   2018/12/27
- * Description: WxArticleApi
+ * Description: ArticleApi
  */
-public class WxArticleApi {
+public class ArticleApi {
 
     private static String Url(String url) {
         return YcxOkGo.getUrl() + url;

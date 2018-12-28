@@ -70,7 +70,6 @@ public class BlogFragment extends BaseFragment<FragmentHomeRecyclerViewBinding> 
         mBinding.recycler.setLayoutManager(new LinearLayoutManager(mActivity));
         mAdapter = new ProjectAdapter(null, mActivity);
         mAdapter.setOnLoadMoreListener(this);
-        mAdapter.openLoadAnimation(BaseQuickAdapter.ALPHAIN);
         mBinding.recycler.setAdapter(mAdapter);
     }
 
@@ -85,6 +84,7 @@ public class BlogFragment extends BaseFragment<FragmentHomeRecyclerViewBinding> 
 
 
     public void scrollToTop() {
+        if (isFirst) return;
         mBinding.recycler.smoothScrollToPosition(0);
     }
 
@@ -118,9 +118,13 @@ public class BlogFragment extends BaseFragment<FragmentHomeRecyclerViewBinding> 
 
     @Override
     public void loadBlogError() {
-        isFirst = true;
-        mHomeFragment.finishRefresh();
-        showError();
+        if (mViewModel.getPage() > App.START_PAGES) {
+            mAdapter.loadMoreFail();
+        } else {
+            isFirst = true;
+            showError();
+            mHomeFragment.finishRefresh();
+        }
     }
 
     @Override

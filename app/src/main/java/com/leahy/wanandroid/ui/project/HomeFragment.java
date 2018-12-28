@@ -4,6 +4,8 @@ package com.leahy.wanandroid.ui.project;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 
@@ -116,13 +118,27 @@ public class HomeFragment extends BaseFragment<FragmentProjectHomeBinding> imple
         SearchActivity.start(mActivity);
     }
 
+
     public void scrollToTop() {
         if (isVisibleToUser) {
             isVisibleToUser = false;
             return;
         }
-        mBinding.refresh.autoRefresh();
+//        mBinding.refresh.autoRefresh();
         ((BlogFragment) mFragments.get(mBinding.mViewPager.getCurrentItem())).scrollToTop();
+        CoordinatorLayout.Behavior behavior = ((CoordinatorLayout.LayoutParams) mBinding.appbar.getLayoutParams()).getBehavior();
+        if (behavior instanceof AppBarLayout.Behavior) {
+            final AppBarLayout.Behavior appBarLayoutBehavior = (AppBarLayout.Behavior) behavior;
+            int topAndBottomOffset = appBarLayoutBehavior.getTopAndBottomOffset();
+            if (topAndBottomOffset != 0) {
+                mBinding.appbar.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        appBarLayoutBehavior.setTopAndBottomOffset(0);
+                    }
+                }, 100);
+            }
+        }
     }
 
     @Override

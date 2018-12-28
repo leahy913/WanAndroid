@@ -61,7 +61,7 @@
 
     <style name="tab_gray_dark_big" parent="Widget.Design.TabLayout">
         <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">45dp</item>
+        <item name="android:layout_height">@dimen/tab_height</item>
         <item name="tabBackground">@drawable/ripple</item>
         <item name="tabSelectedTextColor">@color/colorAccent</item>
         <item name="tabTextAppearance">@style/tab_text_gray_dark_big</item>
@@ -75,18 +75,35 @@
     </style>
 
 
-    <style name="tab_gray_dark_default" parent="Widget.Design.TabLayout">
+    <style name="tab_black_big" parent="Widget.Design.TabLayout">
         <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">45dp</item>
+        <item name="android:layout_height">@dimen/tab_height</item>
         <item name="tabBackground">@drawable/ripple</item>
         <item name="tabSelectedTextColor">@color/colorAccent</item>
-        <item name="tabTextAppearance">@style/tab_text_gray_dark_default</item>
+        <item name="tabTextAppearance">@style/tab_text_black_big</item>
 
     </style>
 
 
-    <style name="tab_text_gray_dark_default" parent="TextAppearance.Design.Tab">
+    <style name="tab_text_black_big" parent="TextAppearance.Design.Tab">
         <item name="android:textSize">@dimen/font_size_big</item>
+        <item name="android:textColor">@color/text_color_black</item>
+        <item name="textAllCaps">true</item>
+    </style>
+
+
+    <style name="tab_black_default" parent="Widget.Design.TabLayout">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="tabBackground">@drawable/ripple</item>
+        <item name="tabSelectedTextColor">@color/colorAccent</item>
+        <item name="tabTextAppearance">@style/tab_text_black_default</item>
+
+    </style>
+
+
+    <style name="tab_text_black_default" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">@dimen/font_size_default</item>
         <item name="android:textColor">@color/text_color_black</item>
         <item name="textAllCaps">true</item>
     </style>

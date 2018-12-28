@@ -24,6 +24,7 @@ public abstract class BaseDataBindingAdapter<T, D extends ViewDataBinding> exten
 
     public BaseDataBindingAdapter(int layoutResId, @Nullable List<T> data) {
         super(layoutResId, data);
+        openLoadAnimation(BaseQuickAdapter.ALPHAIN);
     }
 
     @Override
