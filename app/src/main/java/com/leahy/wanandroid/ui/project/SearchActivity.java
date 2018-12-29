@@ -72,7 +72,7 @@ public class SearchActivity extends BaseActivity<ActivitySearchBinding> implemen
         //初始化搜索结果列表
         mBinding.resultRecycler.setLayoutManager(new LinearLayoutManager(mActivity));
         mSearchResultAdapter = new SearchResultAdapter(mActivity, null);
-        mSearchResultAdapter.setOnLoadMoreListener(this);
+        mSearchResultAdapter.setOnLoadMoreListener(this, mBinding.resultRecycler);
         mBinding.resultRecycler.setAdapter(mSearchResultAdapter);
 
     }
@@ -102,6 +102,7 @@ public class SearchActivity extends BaseActivity<ActivitySearchBinding> implemen
 
 
     public void back() {
+        KeyboardUtils.hideSoftInput(mActivity);
         onBackPressed();
     }
 

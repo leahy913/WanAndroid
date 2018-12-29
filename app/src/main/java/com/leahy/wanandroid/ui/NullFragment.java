@@ -14,7 +14,7 @@ import com.leahy.wanandroid.viewmodel.projrct.HomeViewModel;
  * company ：创序信息科技有限公司
  * Author: leahy
  * Time:   2018/12/24
- * Description: 项目主页
+ * Description: NullFragment
  */
 public class NullFragment extends BaseFragment<FragmentProjectHomeBinding>  {
 

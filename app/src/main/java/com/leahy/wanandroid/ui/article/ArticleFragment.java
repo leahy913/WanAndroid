@@ -71,7 +71,7 @@ public class ArticleFragment extends BaseFragment<FragmentArticleRecyclerBinding
 
         mBinding.recycler.setLayoutManager(new LinearLayoutManager(mActivity));
         mAdapter = new ArticleAdapter(mActivity, null);
-        mAdapter.setOnLoadMoreListener(this);
+        mAdapter.setOnLoadMoreListener(this,mBinding.recycler);
         mBinding.recycler.setAdapter(mAdapter);
         mBinding.recycler.getViewTreeObserver().addOnGlobalLayoutListener(this);
     }

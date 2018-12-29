@@ -69,7 +69,7 @@ public class BlogFragment extends BaseFragment<FragmentHomeRecyclerViewBinding> 
         mViewModel = new BlogViewModel(mActivity, type, this);
         mBinding.recycler.setLayoutManager(new LinearLayoutManager(mActivity));
         mAdapter = new ProjectAdapter(null, mActivity);
-        mAdapter.setOnLoadMoreListener(this);
+        mAdapter.setOnLoadMoreListener(this, mBinding.recycler);
         mBinding.recycler.setAdapter(mAdapter);
     }
 
