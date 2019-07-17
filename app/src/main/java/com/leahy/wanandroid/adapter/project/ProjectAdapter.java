@@ -2,6 +2,7 @@ package com.leahy.wanandroid.adapter.project;
 
 import android.app.Activity;
 import android.support.annotation.Nullable;
+import android.text.Html;
 import android.view.View;
 
 import com.chad.library.adapter.base.BaseViewHolder;
@@ -33,7 +34,8 @@ public class ProjectAdapter extends BaseDataBindingAdapter<ProjectBean.DatasBean
     @Override
     protected void converts(BaseViewHolder helper, ItemProjectBinding binding, final ProjectBean.DatasBean item, int position) {
 
-        binding.setTitle(item.getTitle());
+//        binding.setTitle(item.getTitle());
+        binding.setTitle(Html.fromHtml(item.getTitle()).toString());
         binding.setFresh(item.isFresh());
 
         binding.setTags(item.getTags() != null && item.getTags().size() > 0 ? item.getTags().get(0).getName() : null);

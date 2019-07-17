@@ -19,7 +19,7 @@ import okhttp3.OkHttpClient;
 public class YcxOkGo {
 
     public static String getUrl() {
-        return "http://www.wanandroid.com";
+        return "https://www.wanandroid.com";
     }
 
 

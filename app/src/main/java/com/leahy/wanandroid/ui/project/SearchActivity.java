@@ -172,7 +172,6 @@ public class SearchActivity extends BaseActivity<ActivitySearchBinding> implemen
 
     @Override
     public void searchError() {
-        mBinding.refresh.setRefreshing(false);
         if (mViewModel.getPage() > App.START_PAGES) {
             mSearchResultAdapter.loadMoreFail();
         } else {

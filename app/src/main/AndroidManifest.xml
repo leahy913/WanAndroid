@@ -12,6 +12,7 @@
         android:roundIcon="@mipmap/logo"
         android:screenOrientation="portrait"
         android:supportsRtl="true"
+        tools:targetApi="n"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="android:name,android:icon,android:label,android:theme">
